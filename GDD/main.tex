@@ -1,0 +1,84 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{MnSymbol}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+\title{\huge \textbf{\textit{Living Annuity Modelling Tool}}}
+
+\author{J-Dog}
+
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\section*{A Game Plan for Something Not a Game:}
+\subsection*{Target Audience and Concessions}
+Typically those closer to retirement but as everyone will need some type of pension fund should be designed with a wide age range. With that in mind it should be usable by those that are older as well so have a simple interface and be easy to read/use.
+
+\subsection*{General UX}
+Since some might have an issue seeing how this affects them from just a ``here`s your monthly figure and total fund'' number, some form of data visualisation may go a \textit{loong} way.
+
+\subsection*{Info on a Annuity}
+This is a post-retirement product – typically one buys them with one big lump sum and draws down a monthly amount until either the money runs out, or the person dies. Whatever is left on death can be given to beneficiaries (i.e., children, spouse, whatever).
+\\\\
+Most places charge a larger fee when the fund starts paying out and then a yearly fee there after. Most look to be lower than 2\% though.
+
+\section*{Assumptions and other Info}
+\begin{itemize}
+\item Final calculations will assume no withdrawals from new savings pot before retirement.
+\item A compound interest rate of 6\%
+\item Interest calculated yearly
+\item An initial fee of 1.5 * VAT\% deduction (Hollard's max fee * VAT)
+\item A yearly fee deduction of 1 * VAT\% (Hollard's max continual fee * VAT)
+\end{itemize}
+
+\subsubsection*{Sources}
+\begin{enumerate}
+\item https://personal.nedbank.co.za/learn/blog/pension-fund-vs-retirement-annuities.html
+\item https://www.oldmutual.co.za/two-pot-retirement-system/
+\item https://www.hollard.co.za/invest-and-save/retirement-savings/living-annuity
+\end{enumerate}
+
+\newpage
+\section*{Building Plans}
+A tool to model the total funds invested into a living annuity will be developed in Python using Tkinter for the interface and Matplotlib for a visualisation of the fund amount over the years.
+
+\subsection*{Likely Input Fields}
+\begin{itemize}
+\item Current and proposed retirement age
+\item Amount saved towards the fund
+\item Current saving for the fund
+\item annual funds taken out as \% or ZAR
+\item Option for the 1/3 lump sum to be removed
+\end{itemize}
+
+\subsection*{Outputs}
+\begin{itemize}
+\item Savings at retirement
+\item Monthly income
+\item Years the fund can pay out
+\item Visualisation
+\end{itemize}
+
+\subsection*{To Consider}
+\begin{itemize}
+\item Tooltips of some kind
+\item ...
+\end{itemize}
+
+\end{document}
